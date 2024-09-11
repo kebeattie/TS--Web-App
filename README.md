@@ -1,1 +1,2 @@
-### A React-Express-Node (With TypeScript) Web App
+### A An Ancient Greece fact generator made with React, Node and Express (in Typescript)
+
