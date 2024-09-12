@@ -9,10 +9,12 @@ function App() {
 
   
   
-  const [data, setData] = useState({headline: ""});
+  const [data, setData] = useState({headline: "", image: "", body: ""});
+  
 
   const getDataAPICall = async () => {
     setData(await getData());
+    
   }
   
   useEffect(() => {
