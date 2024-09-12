@@ -7,21 +7,16 @@ import { useState, useEffect } from 'react'
 
 function App() {
 
-  
-  
   const [data, setData] = useState({headline: "", image: "", body: ""});
   
-
   const getDataAPICall = async () => {
     setData(await getData());
-    
   }
   
   useEffect(() => {
     getDataAPICall();
   }, [])
 
-  console.log(typeof(data));
 
   return (
     <>
@@ -31,11 +26,13 @@ function App() {
 
       <div className="container-fluid main-container">
         <div className="row align-items-start">
-          <div className="col-4">
-            <Nav></Nav>
-          </div>
-          <div className="col-8 card-column">
+          <div className="col-12">
             <Card facts={data}></Card>
+          </div>
+        </div>
+        <div className="row align-items-start">
+          <div className="col-12">
+            <Nav></Nav>
           </div>
         </div>
 
