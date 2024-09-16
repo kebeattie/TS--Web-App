@@ -2,6 +2,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "pg-pool": "^3.6.2",
     "typescript-require": "^0.3.0"
   },
   "devDependencies": {

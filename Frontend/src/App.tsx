@@ -1,5 +1,4 @@
 import './App.css'
-import Nav from './components/Nav/Nav'
 import Header from './components/Header/Header'
 import Card from './components/Card/Card'
 import { getData } from './api/getData'
@@ -7,7 +6,7 @@ import { useState, useEffect } from 'react'
 
 function App() {
 
-  const [data, setData] = useState({headline: "", image: "", body: ""});
+  const [data, setData] = useState({headline: "", image: "", facttext: ""});
   
   const getDataAPICall = async () => {
     setData(await getData());
@@ -17,6 +16,9 @@ function App() {
     getDataAPICall();
   }, [])
 
+  const getNewFact = () => {
+    getDataAPICall();
+  }
 
   return (
     <>
@@ -32,7 +34,9 @@ function App() {
         </div>
         <div className="row align-items-start">
           <div className="col-12">
-            <Nav></Nav>
+            <ul className="nav flex-column generate-column">
+                <button type="button" className="btn btn-secondary" onClick={getNewFact}>New Fact</button>
+            </ul>
           </div>
         </div>
 
