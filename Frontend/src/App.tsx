@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 function App() {
 
   const [data, setData] = useState({headline: "", image: "", facttext: ""});
-  
+
   const getDataAPICall = async () => {
     setData(await getData());
   }
@@ -16,17 +16,22 @@ function App() {
     getDataAPICall();
   }, [])
 
-  const getNewFact = () => {
-    getDataAPICall();
-  }
+  const getNewFacts = () => {
+    setData({"headline":"","image":"","facttext":""})
+    setTimeout(() => {
+      getDataAPICall();
+    }, 1000);
+    
+  } 
 
+ 
   return (
     <>
 
       <Header></Header>
 
 
-      <div className="container-fluid main-container">
+      <div className="container main-container">
         <div className="row align-items-start">
           <div className="col-12">
             <Card facts={data}></Card>
@@ -35,7 +40,8 @@ function App() {
         <div className="row align-items-start">
           <div className="col-12">
             <ul className="nav flex-column generate-column">
-                <button type="button" className="btn btn-secondary" onClick={getNewFact}>New Fact</button>
+            <button id="fact-btn" type="button" className="btn btn-secondary" onClick={getNewFacts}>New Fact</button>
+                
             </ul>
           </div>
         </div>

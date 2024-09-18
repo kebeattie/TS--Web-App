@@ -11,8 +11,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
+#root {
+  width: 100vw;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -59,6 +63,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
+  #root {
+    width: 150vw;
+  }
+
   a:hover {
     color: #747bff;
   }

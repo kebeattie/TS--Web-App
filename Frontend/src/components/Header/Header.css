@@ -11,9 +11,11 @@
 
 .header-container {
     height: 11%;
+    width: 100%;
     
 }
 
 .logo-col {
     height: 100%;
+    /* width: 100%; */
 }
