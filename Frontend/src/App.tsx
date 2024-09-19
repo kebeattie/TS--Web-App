@@ -8,8 +8,11 @@ function App() {
 
   const [data, setData] = useState({headline: "", image: "", facttext: ""});
 
+  const [isClicked, setIsClicked] = useState(false);
+
   const getDataAPICall = async () => {
     setData(await getData());
+    setIsClicked(false);
   }
   
   useEffect(() => {
@@ -17,6 +20,7 @@ function App() {
   }, [])
 
   const getNewFacts = () => {
+    setIsClicked(true);
     setData({"headline":"","image":"","facttext":""})
     setTimeout(() => {
       getDataAPICall();
@@ -40,7 +44,7 @@ function App() {
         <div className="row align-items-start">
           <div className="col-12">
             <ul className="nav flex-column generate-column">
-            <button id="fact-btn" type="button" className="btn btn-secondary" onClick={getNewFacts}>New Fact</button>
+            {(isClicked) ? (<></>) : (<button id="fact-btn" type="button" className="btn btn-secondary" onClick={getNewFacts}>New Fact</button>) }
                 
             </ul>
           </div>
